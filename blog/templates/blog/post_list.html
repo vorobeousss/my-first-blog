@@ -6,21 +6,16 @@
 
 <html>
     <head>
-        <title>Liza's blog</title>
+        <title>Lisa's blog</title>
     </head>
-    <body>
         <div>
-            <h1><a href="/">Liza's blog</a></h1>
+            <h1><a href="/">Lisa's blog</a></h1>
         </div>
+    {% for post in posts %}
         <div>
-            <p>Published: 16.11.22, 16:49</p>
-            <h2><a href="/">My first post</a></h2>
-            <p>Liza - best pastry chef</p>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-        <div>
-            <p>published: 16.11.22, 16:50</p>
-            <h2><a href="">My second post and this is about my cannoli</a></h2>
-            <p>They are delicious</p>
-        </div>
-    </body>
+    {% endfor %}
 </html>
